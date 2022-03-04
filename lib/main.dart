@@ -12,9 +12,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) => MaterialApp(
         debugShowCheckedModeBanner: false,
-        onGenerateInitialRoutes: _myRoute.onPerateRoute,
         theme: ThemeComp.materialTheme,
-        initialRoute: "/"
-          
+        initialRoute: "/",
+        onGenerateRoute: _myRoute.onGenerateRout,
       );
 }

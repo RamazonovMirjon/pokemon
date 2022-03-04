@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:pokemon/core/components/theme_comp.dart';
+import 'package:pokemon/routes/my_riutes.dart';
 
-void main() => runApp(const MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
+
+  final MyRoute _myRoute = MyRoute();
 
   @override
   Widget build(BuildContext context) => MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
+        debugShowCheckedModeBanner: false,
+        onGenerateInitialRoutes: _myRoute.onPerateRoute,
+        theme: ThemeComp.materialTheme,
+        initialRoute: "/",
+          
       );
 }

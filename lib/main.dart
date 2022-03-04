@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         onGenerateInitialRoutes: _myRoute.onPerateRoute,
         theme: ThemeComp.materialTheme,
-        initialRoute: "/",
+        initialRoute: "/"
           
       );
 }

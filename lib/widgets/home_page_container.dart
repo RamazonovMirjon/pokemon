@@ -3,7 +3,7 @@ import 'package:pokemon/core/constants/border_radius_const.dart';
 import 'package:pokemon/core/constants/color_const.dart';
 
 Widget homePageContainer(BuildContext context) => Padding(
-      padding: const EdgeInsets.only(top: 50, left: 10, right: 10),
+      padding: const EdgeInsets.only(top: 30, left: 10, right: 10),
       child: Stack(
         children: [
           Container(
@@ -12,10 +12,15 @@ Widget homePageContainer(BuildContext context) => Padding(
               color: ColorConst.kPrimaryColor2,
             ),
             alignment: const Alignment(0, -3),
-            child: Container(
-              color: Colors.black,
-              height: 100,
-              width: 100,
+
+            // padding: EdgeInsets.only(bottom: 100),
+            child: Hero(
+              tag: '@',
+              child: Container(
+                color: Colors.white,
+                height: 70,
+                width: 100,
+              ),
             ),
           ),
           Positioned(

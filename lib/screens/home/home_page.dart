@@ -16,7 +16,7 @@ class MyHomePage extends StatelessWidget {
           child: Column(
             children: [
               Padding(
-                padding: PMConst.kLargePM,
+                padding: PMConst.kMediumPM,
                 child: Image.asset("assets/images/pokemonText.png"),
               ),
               Container(
@@ -35,15 +35,17 @@ class MyHomePage extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: MediaQuery.of(context).size.height * 0.06),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.03),
               Expanded(
                   //bu widget qolgan joyni egallaydi
                   child: GridView.builder(
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                ),
-                itemBuilder: (BuildContext context, int index) =>
-                    homePageContainer(context),
+                    crossAxisCount: 2, childAspectRatio: 1.35),
+                itemBuilder: (BuildContext context, int index) => InkWell(
+                    child: homePageContainer(context),
+                    onTap: () {
+                      Navigator.pushNamed(context, "/info");
+                    }),
                 scrollDirection: Axis.vertical,
                 itemCount: 150,
                 // controller: ScrollController(),

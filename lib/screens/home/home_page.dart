@@ -3,6 +3,7 @@ import 'package:pokemon/core/constants/border_radius_const.dart';
 import 'package:pokemon/core/constants/color_const.dart';
 import 'package:pokemon/core/constants/p_m_const.dart';
 import 'package:pokemon/widgets/home_page_container.dart';
+import 'package:pokemon/widgets/my_text_style.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -29,30 +30,27 @@ class MyHomePage extends StatelessWidget {
                 alignment: Alignment.center,
                 child: Text(
                   "Buscar Pokémon",
-                  style: TextStyle(
-                    fontFamily: "Spartan",
-                    color: ColorConst.kTextGrey,
-                  ),
+                  style: myTextStyle(color: ColorConst.kTextGrey),
                 ),
               ),
               SizedBox(height: MediaQuery.of(context).size.height * 0.03),
               Expanded(
                   //bu widget qolgan joyni egallaydi
                   child: Padding(
-                    padding: PMConst.kExtraSmallPM,
-                    child: GridView.builder(
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                padding: PMConst.kExtraSmallPM,
+                child: GridView.builder(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2, childAspectRatio: 1.35),
-                itemBuilder: (BuildContext context, int index) => InkWell(
+                  itemBuilder: (BuildContext context, int index) => InkWell(
                       child: homePageContainer(context),
                       onTap: () {
                         Navigator.pushNamed(context, "/info");
                       }),
-                scrollDirection: Axis.vertical,
-                itemCount: 150,
-                // controller: ScrollController(),
-              ),
-                  )),
+                  scrollDirection: Axis.vertical,
+                  itemCount: 150,
+                  // controller: ScrollController(),
+                ),
+              )),
             ],
           ),
         ),

@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:pokemon/screens/home/home.dart';
 import 'package:pokemon/screens/home/home_page.dart';
 import 'package:pokemon/screens/info_page.dart';
 
 class MyRoute {
-  
-
   Route? onGenerateRout(RouteSettings settings) {
     var arguments = settings.arguments;
     switch (settings.name) {
@@ -17,12 +14,7 @@ class MyRoute {
         return MaterialPageRoute(
           builder: ((context) => const InfoPage()),
         );
-         case "/home":
-        return MaterialPageRoute(
-          builder: ((context) =>  MYSliver()),
-        );
     }
     return null;
-    
   }
 }

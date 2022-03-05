@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pokemon/core/constants/border_radius_const.dart';
 import 'package:pokemon/core/constants/color_const.dart';
 import 'package:pokemon/core/constants/p_m_const.dart';
+import 'package:pokemon/widgets/my_text_style.dart';
 
 class InfoPage extends StatelessWidget {
   const InfoPage({Key? key}) : super(key: key);
@@ -69,7 +70,7 @@ class InfoPage extends StatelessWidget {
               height: MediaQuery.of(context).size.height * 0.23,
               width: double.infinity,
               decoration: BoxDecoration(
-                  color: ColorConst.kPrimaryColor2,
+                  color: ColorConst.kPrimaryColor,
                   borderRadius: BorderRadiusConst.kLargeBorderRadius),
               alignment: Alignment.center,
               child: Hero(
@@ -86,17 +87,20 @@ class InfoPage extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  myButtom(context, "Fuego", ColorConst.kOrrengeColor),
-                  myButtom(context, "Volador", ColorConst.kBlueColor),
+                  _myButtom(context, "Fuego", ColorConst.kOrrengeColor),
+                  _myButtom(context, "Volador", ColorConst.kBlueColor),
                 ],
               ),
             ),
             Expanded(
                 child: Container(
               decoration: BoxDecoration(
-                color: Colors.amber,
-                borderRadius: BorderRadiusConst.kExtraSmallBorderRadius,
+                color: ColorConst.kPrimaryColor,
+                borderRadius: const BorderRadius.only(
+                    topRight: Radius.circular(60),
+                    topLeft: Radius.circular(60)),
               ),
+              child: _containerInfo,
             ))
           ]),
         ),
@@ -104,7 +108,7 @@ class InfoPage extends StatelessWidget {
     );
   }
 
-  Widget myButtom(BuildContext context, String text, Color color) => InkWell(
+  Widget _myButtom(BuildContext context, String text, Color color) => InkWell(
         onTap: () {},
         child: Container(
           width: MediaQuery.of(context).size.width * 0.4,
@@ -119,10 +123,23 @@ class InfoPage extends StatelessWidget {
                   weight: FontWeight.w800, color: ColorConst.kWhite)),
         ),
       );
-}
 
-TextStyle myTextStyle({
-  Color color = Colors.white,
-  FontWeight weight = FontWeight.w400,
-}) =>
-    TextStyle(fontFamily: "Spartan", fontWeight: weight, color: color);
+  Widget get _containerInfo => Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Expanded(
+            flex: 1,
+            child: Column(),
+          ),
+          Expanded(
+            flex: 2,
+            child: Column(
+              children: [
+                Row(),
+                Image.asset("assets/images/naruto.png"),
+              ],
+            ),
+          ),
+        ],
+      );
+}

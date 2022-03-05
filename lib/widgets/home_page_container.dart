@@ -9,7 +9,7 @@ Widget homePageContainer(BuildContext context) => Padding(
           Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadiusConst.kSmallBorderRadius,
-              color: ColorConst.kPrimaryColor2,
+              color: ColorConst.kPrimaryColor,
             ),
             alignment: const Alignment(0, -3),
 

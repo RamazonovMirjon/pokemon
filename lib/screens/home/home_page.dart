@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pokemon/core/constants/border_radius_const.dart';
 import 'package:pokemon/core/constants/color_const.dart';
 import 'package:pokemon/core/constants/p_m_const.dart';
+import 'package:pokemon/widgets/home_page_container.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -35,9 +36,18 @@ class MyHomePage extends StatelessWidget {
                 ),
               ),
               SizedBox(height: MediaQuery.of(context).size.height * 0.06),
-              Expanded(   //bu widget qolgan joyni egallaydi
-                child: Text(''),
-              ),
+              Expanded(
+                  //bu widget qolgan joyni egallaydi
+                  child: GridView.builder(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                ),
+                itemBuilder: (BuildContext context, int index) =>
+                    homePageContainer(context),
+                scrollDirection: Axis.vertical,
+                itemCount: 150,
+                // controller: ScrollController(),
+              )),
             ],
           ),
         ),

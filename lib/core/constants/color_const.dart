@@ -10,6 +10,7 @@ class ColorConst {
   static Color kGrey = const Color(0XFFE5E5E5);
   static Color kTextGrey = const Color(0XFF838282);
   static Color kIconColor = const Color(0XFF858383);
+  static Color kGreydark = const Color(0XFF676767);
   static Color kBlack = const Color(0X00000000);
   static Color kTextButtonColor = const Color(0XFFFFFEFC);
   static Color kOrrengeColor = const Color(0XFFFCA600).withOpacity(0.97);

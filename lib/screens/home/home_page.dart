@@ -38,18 +38,21 @@ class MyHomePage extends StatelessWidget {
               SizedBox(height: MediaQuery.of(context).size.height * 0.03),
               Expanded(
                   //bu widget qolgan joyni egallaydi
-                  child: GridView.builder(
+                  child: Padding(
+                    padding: PMConst.kExtraSmallPM,
+                    child: GridView.builder(
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2, childAspectRatio: 1.35),
+                      crossAxisCount: 2, childAspectRatio: 1.35),
                 itemBuilder: (BuildContext context, int index) => InkWell(
-                    child: homePageContainer(context),
-                    onTap: () {
-                      Navigator.pushNamed(context, "/info");
-                    }),
+                      child: homePageContainer(context),
+                      onTap: () {
+                        Navigator.pushNamed(context, "/info");
+                      }),
                 scrollDirection: Axis.vertical,
                 itemCount: 150,
                 // controller: ScrollController(),
-              )),
+              ),
+                  )),
             ],
           ),
         ),

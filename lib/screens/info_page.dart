@@ -37,13 +37,8 @@ class InfoPage extends StatelessWidget {
                     borderRadius: BorderRadiusConst.kMediumBorderRadius,
                   ),
                   alignment: Alignment.center,
-                  child: Text(
-                    "Buscar Pokémon",
-                    style: TextStyle(
-                      fontFamily: "Spartan",
-                      color: ColorConst.kTextGrey,
-                    ),
-                  ),
+                  child: Text("Buscar Pokémon",
+                      style: myTextStyle(color: ColorConst.kTextGrey)),
                 ),
                 IconButton(
                     onPressed: () {},
@@ -52,26 +47,82 @@ class InfoPage extends StatelessWidget {
             ),
             SizedBox(height: MediaQuery.of(context).size.height * 0.03),
             Padding(
-              padding: PMConst.kSmallPM,
+              padding: const EdgeInsets.only(right: 20, left: 20, bottom: 10),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("data"),
-                  Text("Name"),
+                  Text(
+                    "data",
+                    style: myTextStyle(
+                        color: ColorConst.kTextPink, weight: FontWeight.w800),
+                  ),
+                  Text(
+                    "Name",
+                    style: myTextStyle(
+                        color: Colors.black, weight: FontWeight.w800),
+                  ),
                 ],
               ),
             ),
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 20),
-              height: MediaQuery.of(context).size.height*0.23,
+              height: MediaQuery.of(context).size.height * 0.23,
               width: double.infinity,
-              decoration: BoxDecoration(color: ColorConst.kPrimaryColor2),
+              decoration: BoxDecoration(
+                  color: ColorConst.kPrimaryColor2,
+                  borderRadius: BorderRadiusConst.kLargeBorderRadius),
               alignment: Alignment.center,
-              child: Hero(tag: "@",child: Container(height: 200,width: 300,color: Colors.white,),),
-            )
+              child: Hero(
+                tag: "@",
+                child: Container(
+                  height: 100,
+                  width: 100,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+            Padding(
+              padding: PMConst.kSmallPM,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  myButtom(context, "Fuego", ColorConst.kOrrengeColor),
+                  myButtom(context, "Volador", ColorConst.kBlueColor),
+                ],
+              ),
+            ),
+            Expanded(
+                child: Container(
+              decoration: BoxDecoration(
+                color: Colors.amber,
+                borderRadius: BorderRadiusConst.kExtraSmallBorderRadius,
+              ),
+            ))
           ]),
         ),
       ),
     );
   }
+
+  Widget myButtom(BuildContext context, String text, Color color) => InkWell(
+        onTap: () {},
+        child: Container(
+          width: MediaQuery.of(context).size.width * 0.4,
+          height: 38,
+          decoration: BoxDecoration(
+            color: color,
+            borderRadius: BorderRadiusConst.kExtraSmallBorderRadius,
+          ),
+          alignment: Alignment.center,
+          child: Text(text,
+              style: myTextStyle(
+                  weight: FontWeight.w800, color: ColorConst.kWhite)),
+        ),
+      );
 }
+
+TextStyle myTextStyle({
+  Color color = Colors.white,
+  FontWeight weight = FontWeight.w400,
+}) =>
+    TextStyle(fontFamily: "Spartan", fontWeight: weight, color: color);

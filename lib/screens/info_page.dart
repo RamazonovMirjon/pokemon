@@ -101,19 +101,17 @@ class InfoPage extends StatelessWidget {
             ),
             //Pokemon rasmi uchun
             Positioned(
-                left: MediaQuery.of(context).size.width * 0.17,
-                top: MediaQuery.of(context).size.height * 0.25,
-                child: Container(
-                  width: MediaQuery.of(context).size.width * 0.650,
-                  height: MediaQuery.of(context).size.height * 0.275,
-                  alignment: Alignment.bottomCenter,
-                  color: Colors.black,
-                  child: const Hero(
-                    child: Text('Mirjon',
-                        style: TextStyle(backgroundColor: Colors.amber)),
-                    tag: '@',
-                  ),
-                ))
+              left: MediaQuery.of(context).size.width * 0.17,
+              top: MediaQuery.of(context).size.height * 0.25,
+              child: Container(
+                width: MediaQuery.of(context).size.width * 0.650,
+                height: MediaQuery.of(context).size.height * 0.275,
+                alignment: Alignment.bottomCenter,
+                color: Colors.black,
+                child: const Text('Mirjon',
+                    style: TextStyle(backgroundColor: Colors.amber)),
+              ),
+            )
           ],
         ),
       ),

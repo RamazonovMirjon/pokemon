@@ -4,7 +4,7 @@ import 'package:pokemon/screens/info_page.dart';
 
 class MyRoute {
   Route? onGenerateRout(RouteSettings settings) {
-    var arguments = settings.arguments;
+    //var arguments = settings.arguments;
     switch (settings.name) {
       case "/":
         return MaterialPageRoute(
